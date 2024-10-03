@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my first file </title>
+    <title>FlexBox</title>
 </head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding:0;
+    }
+    .parent{
+        border:2px solid red;
+        display: flex;
+        height: 100vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(242, 183, 106);
+        flex-wrap: wrap-reverse;
+    }
+    .Box{
+        border: 2px solid blue;
+        width: 100px ;
+        height: 100px;
+        background-color: rgb(114, 239, 170);
+        align-content: center;
+        text-align: center;
+    }
+    #Box-1{
+        order:1;
+        flex-grow: 1;
+    }
+    #Box-2{
+        order:2;
+        align-self: flex-end;
+    }
+    #Box-3{
+        flex-grow: 2;
+    }
+    
+</style>
 <body>
-    
-    
+   <div class="parent">
+    <div class="Box" id ="Box-1">Box-1</div>
+    <div class="Box" id ="Box-2">Box-2</div>
+    <div class="Box" id ="Box-3">Box-3</div>
+    <div class="Box" id ="Box-4">Box-4</div>
+    <div class="Box" id ="Box-5">Box-5</div>
+   </div>
 </body>
 </html>
