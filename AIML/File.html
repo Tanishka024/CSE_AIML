@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><b> Events in JavaScript</b></h1>
+
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <p id="focusMessage"></p>
+
+    <label for="color">Colour:</label>
+    <input type="select" id>
+    <div id="parent">
+        <button id="btn1">BUTTON 1</button>
+        <button id="btn2">BUTTON 2</button>
+        <p id="para1">paragrah 1</p>
+        <p id="para2">paragrah 2</p>
+
+    </div>
+    <script>
+        let button= document.createElement("button");
+        button.textContent ="Click Me!";
+        button.id ="btn";
+        document.body.appendChild(button);
+
+        let para = document.createElement("p");
+        para.textContent = "Hello World!!";
+        para.id="para"
+        document.body.appendChild(para);
+
+        let div = document.createElement("div");
+        div.id="parent";
+        div.textContent="parent"
+        div.style.backgroundColor = "lightblue";
+        div.style.width="200px";
+        div.style.height="200px";
+        div.appendChild(button);
+        div.appendChild(para);
+        document.body.appendChild(div);
+
+        documment.getElementById("parent").addEventListener("click",function (event){
+            if(event.target.tagName === "btn"){
+                alert(event.target.innerHTML+" was clicked");
+            }
+            if(event.target.tagName ==="para"){
+                event.target.style.color ="blue";
+            }
+        });
+
+
+
+        
+
+
+    document.getElementById("btn").addEventListener("click",function() {
+    document.getElementById("para").innerText= "Button Clicked!"
+    });
+    document.getElementById('nameInput').onblur = function(){
+         document.getElementById("focusMessage").innerText= "Input field lost focus!"
+    }
+    document.getElementById("nameInput").onfocus=function() {
+        document.getElementById("focusMessage").innerText= "Input field is focused!"
+    };
+    </script>
+</body>
+</html>
